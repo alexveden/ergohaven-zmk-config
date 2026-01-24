@@ -34,6 +34,46 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <40 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 38 39 40>;
         };
+
+        TD_mouse_layer: TD_mouse_layer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MOUSE_LAYER";
+            #binding-cells = <0>;
+            bindings = <&none>, <&tog 4>;
+        };
+
+        hrm_shift_left: hrm_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_SHIFT_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <31 41 6 7 8 9 10 11 18 19 20 21 22 23 31 32 33 34 35 36 37 41 42 43>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+        };
+
+        hrm_shift_right: hrm_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_SHIFT_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <40 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 38 39 40>;
+            hold-trigger-on-release;
+        };
+
+        TD_mouse_hold: TD_mouse_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TD_MOUSE_HOLD";
+            bindings = <&mo>, <&TD_mouse_layer>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -41,10 +81,10 @@
 
         base {
             bindings = <
-&kp TAB     &kp Q                 &kp W                 &kp E              &kp R                   &kp T                              &kp Y  &kp U                     &kp I               &kp O                   &kp P                      &kp UNDER
-&kp ESC     &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI S  &hrm_left LCTRL D  &hrm_left LEFT_SHIFT F  &kp G                              &kp H  &hrm_right RIGHT_SHIFT J  &hrm_right RCTRL K  &hrm_right RIGHT_GUI L  &hrm_right RIGHT_ALT SEMI  &kp SQT
-&caps_word  &kp Z                 &kp X                 &kp C              &kp V                   &kp B  &kp LBKT     &kp RBKT       &kp N  &kp M                     &kp COMMA           &kp DOT                 &kp FSLH                   &kp ENTER
-                                                                           &kp SCROLLLOCK          &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &tog 4
+&kp TAB     &kp Q                 &kp W                 &kp E              &kp R                         &kp T                              &kp Y  &kp U                           &kp I               &kp O                   &kp P                      &kp UNDER
+&kp ESC     &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI S  &hrm_left LCTRL D  &hrm_shift_left LEFT_SHIFT F  &kp G                              &kp H  &hrm_shift_right RIGHT_SHIFT J  &hrm_right RCTRL K  &hrm_right RIGHT_GUI L  &hrm_right RIGHT_ALT SEMI  &kp SQT
+&caps_word  &kp Z                 &kp X                 &kp C              &kp V                         &kp B  &kp LBKT     &kp RBKT       &kp N  &kp M                           &kp COMMA           &kp DOT                 &kp FSLH                   &kp ENTER
+                                                                           &kp SCROLLLOCK                &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &TD_mouse_hold 4 0
             >;
 
             display-name = "Base";
@@ -68,7 +108,7 @@
             bindings = <
 &kp TILDE  &kp EXCL               &kp AT_SIGN                  &kp HASH                  &kp DOLLAR                     &kp PRCNT                                            &kp CARET       &kp AMPERSAND              &kp ASTERISK         &kp LPAR                 &kp RPAR                 &kp MINUS
 &kp EQUAL  &hrm_left LEFT_ALT N1  &hrm_left LEFT_GUI NUMBER_2  &hrm_left LCTRL NUMBER_3  &hrm_left LEFT_SHIFT NUMBER_4  &kp NUMBER_5                                         &kp N6          &hrm_right RIGHT_SHIFT N7  &hrm_right RCTRL N8  &hrm_right RIGHT_GUI N9  &hrm_right RIGHT_ALT N0  &kp GRAVE
-&kp PIPE   &kp NUBS               &kp LESS_THAN                &kp GREATER_THAN          &kp LPAR                       &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE            &kp COMMA            &kp DOT                  &kp FSLH                 &kp PLUS
+&kp PIPE   &kp BACKSLASH          &kp LESS_THAN                &kp GREATER_THAN          &kp LPAR                       &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE            &kp COMMA            &kp DOT                  &kp FSLH                 &kp PLUS
                                                                                          &trans                         &mo 3         &trans              &trans             &trans          &trans
             >;
 
