@@ -52,7 +52,7 @@
             #binding-cells = <2>;
             hold-trigger-key-positions = <31 6 7 8 9 10 11 18 19 20 21 22 23 31 32 33 34 35 36 37>;
             tapping-term-ms = <1000>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
         };
 
         hrm_shift_right: hrm_shift_right {
@@ -63,7 +63,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
         };
     };
 
