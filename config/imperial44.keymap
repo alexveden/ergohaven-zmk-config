@@ -42,6 +42,8 @@
             label = "TD_MOUSE_LAYER";
             #binding-cells = <0>;
             bindings = <&none>, <&tog 4>;
+
+            tapping-term-ms = <300>;
         };
 
         hrm_shift_left: hrm_shift_left {
@@ -124,7 +126,7 @@
 &kp TAB  &none     &none     &none      &none      &none                     &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
 &kp ESC  &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none                     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
 &none    &none     &none     &none      &none      &none   &none     &none   &none           &none           &none           &none            &none  &kp ENTER
-                                        &none      &tog 4  &tog 4    &tog 4  &tog 4          &trans
+                                        &none      &tog 4  &tog 4    &tog 4  &tog 4          &tog 4
             >;
         };
     };
