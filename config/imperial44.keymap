@@ -2,9 +2,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10#include "keys_ru.h"
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -108,14 +106,13 @@
         };
 
         nav {
+            display-name = "Nav";
             bindings = <
 &kp TAB  &none         &none         &none       &none           &none                               &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END          &none  &none
 &kp ESC  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL   &kp LEFT_SHIFT  &none                               &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &none  &none
 &none    &kp LC(Z)     &kp K_CUT     &kp K_COPY  &kp K_PASTE     &none   &none        &none          &kp DELETE     &none     &none         &none            &none  &kp ENTER
                                                  &none           &trans  &kp SPACE    &kp BACKSPACE  &mo 4          &none
             >;
-
-            display-name = "Nav";
         };
 
         sym {
@@ -129,15 +126,15 @@
             display-name = "Symbols";
         };
 
-        adj {
+        sym {
             bindings = <
-&none  &none                  &none                  &none               &none                    &none                                &bt BT_SEL 0  &bt BT_SEL 1               &bt BT_SEL 2         &bt BT_SEL 3             &bt BT_SEL 4              &none
-&none  &hrm_left LEFT_ALT F1  &hrm_left LEFT_GUI F2  &hrm_left LCTRL F3  &hrm_left LEFT_SHIFT F4  &kp F5                               &kp F6        &hrm_right RIGHT_SHIFT F7  &hrm_right RCTRL F8  &hrm_right RIGHT_GUI F9  &hrm_right RIGHT_ALT F10  &none
-&none  &none                  &none                  &none               &none                    &kp F11  &out OUT_TOG    &bt BT_CLR  &kp F12       &none                      &none                &none                    &none                     &none
-                                                                         &none                    &trans   &none           &none       &trans        &none
+&kp TILDE  &kp EXCL               &kp AT_SIGN                  &kp HASH                  &kp DOLLAR                     &kp PRCNT                                            &kp CARET       &kp AMPERSAND              &kp ASTERISK         &kp LPAR                 &kp RPAR                 &kp MINUS
+&kp EQUAL  &hrm_left LEFT_ALT N1  &hrm_left LEFT_GUI NUMBER_2  &hrm_left LCTRL NUMBER_3  &hrm_left LEFT_SHIFT NUMBER_4  &kp NUMBER_5                                         &kp N6          &hrm_right RIGHT_SHIFT N7  &hrm_right RCTRL N8  &hrm_right RIGHT_GUI N9  &hrm_right RIGHT_ALT N0  &kp GRAVE
+&kp PIPE   &kp BACKSLASH          &kp LESS_THAN                &kp GREATER_THAN          &kp LPAR                       &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE            &kp COMMA            &kp DOT                  &kp FSLH                 &kp PLUS
+                                                                                         &trans                         &mo 4         &trans              &trans             &trans          &trans
             >;
 
-            display-name = "Adjust";
+            display-name = "Symbols";
         };
 
         mouse {
