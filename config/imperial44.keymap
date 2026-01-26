@@ -145,5 +145,16 @@
                                         &none      &tog 5  &tog 5    &tog 5  &tog 5          &tog 5
             >;
         };
+
+        adj {
+            bindings = <
+&none  &none                  &none                  &none               &none                    &none                                &bt BT_SEL 0  &bt BT_SEL 1               &bt BT_SEL 2         &bt BT_SEL 3             &bt BT_SEL 4              &none
+&none  &hrm_left LEFT_ALT F1  &hrm_left LEFT_GUI F2  &hrm_left LCTRL F3  &hrm_left LEFT_SHIFT F4  &kp F5                               &kp F6        &hrm_right RIGHT_SHIFT F7  &hrm_right RCTRL F8  &hrm_right RIGHT_GUI F9  &hrm_right RIGHT_ALT F10  &none
+&none  &none                  &none                  &none               &none                    &kp F11  &out OUT_TOG    &bt BT_CLR  &kp F12       &none                      &none                &none                    &none                     &none
+                                                                         &none                    &trans   &none           &none       &trans        &none
+            >;
+
+            display-name = "FKeys";
+        };
     };
 };
