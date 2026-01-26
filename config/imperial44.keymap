@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MOUSE_LAYER";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 4>;
+            bindings = <&none>, <&tog 5>;
 
             tapping-term-ms = <300>;
         };
@@ -67,18 +67,41 @@
         };
     };
 
+    macros {
+        ru_lang: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 1 &kp SCROLLLOCK>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        colemak-dh {
+            bindings = <
+&kp TAB     &kp Q                 &kp W                 &kp F              &kp P                         &kp B                              &kp J  &kp L                           &kp U               &kp Y                   &kp SEMI                &kp UNDER
+&kp ESC     &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI R  &hrm_left LCTRL S  &hrm_shift_left LEFT_SHIFT T  &kp G                              &kp M  &hrm_shift_right RIGHT_SHIFT N  &hrm_right RCTRL E  &hrm_right RIGHT_GUI I  &hrm_right RIGHT_ALT O  &kp SQT
+&caps_word  &kp Z                 &kp X                 &kp C              &kp D                         &kp V  &kp LBKT     &kp RBKT       &kp K  &kp H                           &kp COMMA           &kp DOT                 &kp FSLH                &kp ENTER
+                                                                           &ru_lang                      &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &TD_mouse_layer
+            >;
+
+            display-name = "Base";
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
+        };
+
+        qwerty {
+            display-name = "Base";
             bindings = <
 &kp TAB     &kp Q                 &kp W                 &kp E              &kp R                         &kp T                              &kp Y  &kp U                           &kp I               &kp O                   &kp P                      &kp UNDER
 &kp ESC     &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI S  &hrm_left LCTRL D  &hrm_shift_left LEFT_SHIFT F  &kp G                              &kp H  &hrm_shift_right RIGHT_SHIFT J  &hrm_right RCTRL K  &hrm_right RIGHT_GUI L  &hrm_right RIGHT_ALT SEMI  &kp SQT
 &caps_word  &kp Z                 &kp X                 &kp C              &kp V                         &kp B  &kp LBKT     &kp RBKT       &kp N  &kp M                           &kp COMMA           &kp DOT                 &kp FSLH                   &kp ENTER
-                                                                           &kp SCROLLLOCK                &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &TD_mouse_layer
+                                                                           &ru_lang                      &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &TD_mouse_layer
             >;
 
-            display-name = "Base";
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp PG_UP PG_DN>;
@@ -89,7 +112,7 @@
 &kp TAB  &none         &none         &none       &none           &none                               &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END          &none  &none
 &kp ESC  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL   &kp LEFT_SHIFT  &none                               &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &none  &none
 &none    &kp LC(Z)     &kp K_CUT     &kp K_COPY  &kp K_PASTE     &none   &none        &none          &kp DELETE     &none     &none         &none            &none  &kp ENTER
-                                                 &none           &trans  &kp SPACE    &kp BACKSPACE  &mo 3          &none
+                                                 &none           &trans  &kp SPACE    &kp BACKSPACE  &mo 4          &none
             >;
 
             display-name = "Nav";
@@ -100,7 +123,7 @@
 &kp TILDE  &kp EXCL               &kp AT_SIGN                  &kp HASH                  &kp DOLLAR                     &kp PRCNT                                            &kp CARET       &kp AMPERSAND              &kp ASTERISK         &kp LPAR                 &kp RPAR                 &kp MINUS
 &kp EQUAL  &hrm_left LEFT_ALT N1  &hrm_left LEFT_GUI NUMBER_2  &hrm_left LCTRL NUMBER_3  &hrm_left LEFT_SHIFT NUMBER_4  &kp NUMBER_5                                         &kp N6          &hrm_right RIGHT_SHIFT N7  &hrm_right RCTRL N8  &hrm_right RIGHT_GUI N9  &hrm_right RIGHT_ALT N0  &kp GRAVE
 &kp PIPE   &kp BACKSLASH          &kp LESS_THAN                &kp GREATER_THAN          &kp LPAR                       &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE            &kp COMMA            &kp DOT                  &kp FSLH                 &kp PLUS
-                                                                                         &trans                         &mo 3         &trans              &trans             &trans          &trans
+                                                                                         &trans                         &mo 4         &trans              &trans             &trans          &trans
             >;
 
             display-name = "Symbols";
@@ -122,7 +145,7 @@
 &kp TAB  &none     &none     &none      &none      &none                     &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
 &kp ESC  &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none                     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
 &none    &none     &none     &none      &none      &none   &none     &none   &none           &none           &none           &none            &none  &kp ENTER
-                                        &none      &tog 4  &tog 4    &tog 4  &tog 4          &tog 4
+                                        &none      &tog 5  &tog 5    &tog 5  &tog 5          &tog 5
             >;
         };
     };
