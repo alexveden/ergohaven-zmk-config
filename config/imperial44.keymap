@@ -85,10 +85,10 @@
 
         colemak-dh {
             bindings = <
-&kp TAB     &kp Q                 &kp W                 &kp F              &kp P                         &kp B                              &kp J  &kp L                           &kp U               &kp Y                   &kp SEMI                &kp UNDER
-&kp ESC     &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI R  &hrm_left LCTRL S  &hrm_shift_left LEFT_SHIFT T  &kp G                              &kp M  &hrm_shift_right RIGHT_SHIFT N  &hrm_right RCTRL E  &hrm_right RIGHT_GUI I  &hrm_right RIGHT_ALT O  &kp SQT
-&caps_word  &kp Z                 &kp X                 &kp C              &kp D                         &kp V  &kp LBKT     &kp RBKT       &kp K  &kp H                           &kp COMMA           &kp DOT                 &kp FSLH                &kp ENTER
-                                                                           &ru_lang                      &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &TD_mouse_layer
+&kp TAB     &kp Q                 &kp W                 &kp F              &kp P                   &kp B                              &kp J  &kp L                     &kp U               &kp Y                   &kp SEMI                &kp UNDER
+&kp ESC     &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI R  &hrm_left LCTRL S  &hrm_left LEFT_SHIFT T  &kp G                              &kp M  &hrm_right RIGHT_SHIFT N  &hrm_right RCTRL E  &hrm_right RIGHT_GUI I  &hrm_right RIGHT_ALT O  &kp SQT
+&caps_word  &kp Z                 &kp X                 &kp C              &kp D                   &kp V  &kp LBKT     &kp RBKT       &kp K  &kp H                     &kp COMMA           &kp DOT                 &kp FSLH                &kp ENTER
+                                                                           &ru_lang                &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &TD_mouse_layer
             >;
 
             display-name = "Base";
