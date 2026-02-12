@@ -75,6 +75,8 @@
             label = "STICKY_SHIFT";
             #binding-cells = <0>;
             bindings = <&sticky_shift_press LEFT_SHIFT>, <&caps_word>;
+
+            tapping-term-ms = <400>;
         };
 
         sticky_shift_press: sticky_shift_press {
@@ -82,7 +84,7 @@
             label = "STICKY_SHIFT_PRESS";
             bindings = <&kp>;
             #binding-cells = <1>;
-            release-after-ms = <500>;
+            release-after-ms = <1500>;
             quick-release;
         };
     };
