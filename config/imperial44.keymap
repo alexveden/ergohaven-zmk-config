@@ -132,10 +132,10 @@
         nav {
             display-name = "Nav";
             bindings = <
-&kp TAB  &none         &none         &none       &none           &none                               &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END          &none  &none
-&kp ESC  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL   &kp LEFT_SHIFT  &none                               &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &none  &none
-&none    &kp LC(Z)     &kp K_CUT     &kp K_COPY  &kp K_PASTE     &none   &none        &none          &kp DELETE     &none     &none         &none            &none  &kp ENTER
-                                                 &none           &trans  &kp SPACE    &kp BACKSPACE  &mo 5          &none
+&kp LG(ENTER)  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &kp LG(N5)                                  &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END          &none  &none
+&kp ESC        &kp LEFT_ALT      &kp LEFT_GUI      &kp LCTRL         &kp LEFT_SHIFT    &kp LG(N7)                                  &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &none  &none
+&kp LG(D)      &kp LC(Z)         &kp K_CUT         &kp K_COPY        &kp K_PASTE       &kp LG(N0)  &kp LG(LC(Q))    &none          &kp DELETE     &none     &none         &none            &none  &kp ENTER
+                                                                     &none             &trans      &kp SPACE        &kp BACKSPACE  &mo 5          &none
             >;
         };
 
