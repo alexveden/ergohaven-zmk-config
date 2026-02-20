@@ -141,7 +141,7 @@
 
         sym {
             bindings = <
-&kp TILDE  &kp EXCL               &kp AT_SIGN                  &kp HASH                  &kp DOLLAR                     &kp PRCNT                                            &kp CARET       &kp AMPERSAND              &kp ASTERISK         &kp LS(GRAVE)            &kp COLON                &kp MINUS
+&kp TILDE  &kp EXCL               &kp AT_SIGN                  &kp HASH                  &kp DOLLAR                     &kp PRCNT                                            &kp CARET       &kp AMPERSAND              &kp ASTERISK         &kp GRAVE                &kp COLON                &kp MINUS
 &kp EQUAL  &hrm_left LEFT_ALT N1  &hrm_left LEFT_GUI NUMBER_2  &hrm_left LCTRL NUMBER_3  &hrm_left LEFT_SHIFT NUMBER_4  &kp NUMBER_5                                         &kp N6          &hrm_right RIGHT_SHIFT N7  &hrm_right RCTRL N8  &hrm_right RIGHT_GUI N9  &hrm_right RIGHT_ALT N0  &kp DOUBLE_QUOTES
 &kp PIPE   &kp BACKSLASH          &kp LESS_THAN                &kp GREATER_THAN          &kp LPAR                       &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE            &kp COMMA            &kp DOT                  &kp FSLH                 &kp PLUS
                                                                                          &trans                         &mo 5         &trans              &trans             &trans          &trans
