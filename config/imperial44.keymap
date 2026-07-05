@@ -86,6 +86,16 @@
             release-after-ms = <1500>;
             quick-release;
         };
+
+        hrm_simple: hrm_simple {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_SIMPLE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -102,10 +112,10 @@
 
         colemak-dh {
             bindings = <
-&kp TAB        &kp Q                 &kp W                 &kp F              &kp P                   &kp B                              &kp J  &kp L                     &kp U               &kp Y                   &kp SEMI                &kp UNDER
-&kp ESC        &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI R  &hrm_left LCTRL S  &hrm_left LEFT_SHIFT T  &kp G                              &kp M  &hrm_right RIGHT_SHIFT N  &hrm_right RCTRL E  &hrm_right RIGHT_GUI I  &hrm_right RIGHT_ALT O  &kp SQT
-&sticky_shift  &kp Z                 &kp X                 &kp C              &kp D                   &kp V  &kp LBKT     &kp RBKT       &kp K  &kp H                     &kp COMMA           &kp DOT                 &kp FSLH                &mt RSHFT ENTER
-                                                                              &ru_lang                &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &kp LCTRL
+&kp TAB        &kp Q                   &kp W                   &kp F                &kp P                     &kp B                              &kp J  &kp L                      &kp U                &kp Y                    &kp SEMI                 &kp UNDER
+&kp ESC        &hrm_simple LEFT_ALT A  &hrm_simple LEFT_GUI R  &hrm_simple LCTRL S  &hrm_simple LEFT_SHIFT T  &kp G                              &kp M  &hrm_simple RIGHT_SHIFT N  &hrm_simple RCTRL E  &hrm_simple RIGHT_GUI I  &hrm_simple RIGHT_ALT O  &kp SQT
+&sticky_shift  &kp Z                   &kp X                   &kp C                &kp D                     &kp V  &kp LBKT     &kp RBKT       &kp K  &kp H                      &kp COMMA            &kp DOT                  &kp FSLH                 &mt RSHFT ENTER
+                                                                                    &ru_lang                  &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &kp LCTRL
             >;
 
             display-name = "Base";
@@ -117,10 +127,10 @@
         qwerty {
             display-name = "Base";
             bindings = <
-&kp TAB  &kp Q                 &kp W                 &kp E              &kp R                   &kp T                              &kp Y  &kp U                     &kp I               &kp O                   &kp P                      &kp UNDER
-&kp ESC  &hrm_left LEFT_ALT A  &hrm_left LEFT_GUI S  &hrm_left LCTRL D  &hrm_left LEFT_SHIFT F  &kp G                              &kp H  &hrm_right RIGHT_SHIFT J  &hrm_right RCTRL K  &hrm_right RIGHT_GUI L  &hrm_right RIGHT_ALT SEMI  &kp SQT
-&trans   &kp Z                 &kp X                 &kp C              &kp V                   &kp B  &kp LBKT     &kp RBKT       &kp N  &kp M                     &kp COMMA           &kp DOT                 &kp FSLH                   &trans
-                                                                        &ru_lang                &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &trans
+&kp TAB  &kp Q                   &kp W                   &kp E                &kp R                     &kp T                              &kp Y  &kp U                      &kp I                &kp O                    &kp P                       &kp UNDER
+&kp ESC  &hrm_simple LEFT_ALT A  &hrm_simple LEFT_GUI S  &hrm_simple LCTRL D  &hrm_simple LEFT_SHIFT F  &kp G                              &kp H  &hrm_simple RIGHT_SHIFT J  &hrm_simple RCTRL K  &hrm_simple RIGHT_GUI L  &hrm_simple RIGHT_ALT SEMI  &kp SQT
+&trans   &kp Z                   &kp X                   &kp C                &kp V                     &kp B  &kp LBKT     &kp RBKT       &kp N  &kp M                      &kp COMMA            &kp DOT                  &kp FSLH                    &trans
+                                                                              &ru_lang                  &mo 2  &kp SPACE    &kp BACKSPACE  &mo 3  &trans
             >;
 
             sensor-bindings =
@@ -140,10 +150,10 @@
 
         sym {
             bindings = <
-&kp TILDE  &kp EXCL               &kp AT_SIGN                  &kp HASH                  &kp DOLLAR                     &kp PRCNT                                            &kp CARET       &kp AMPERSAND              &kp ASTERISK         &kp GRAVE                &kp COLON                &kp MINUS
-&kp EQUAL  &hrm_left LEFT_ALT N1  &hrm_left LEFT_GUI NUMBER_2  &hrm_left LCTRL NUMBER_3  &hrm_left LEFT_SHIFT NUMBER_4  &kp NUMBER_5                                         &kp N6          &hrm_right RIGHT_SHIFT N7  &hrm_right RCTRL N8  &hrm_right RIGHT_GUI N9  &hrm_right RIGHT_ALT N0  &kp DOUBLE_QUOTES
-&kp PIPE   &kp BACKSLASH          &kp LESS_THAN                &kp GREATER_THAN          &kp LPAR                       &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE            &kp COMMA            &kp DOT                  &kp FSLH                 &kp PLUS
-                                                                                         &trans                         &mo 4         &trans              &kp BACKSPACE      &trans          &trans
+&kp TILDE  &kp EXCL                 &kp AT_SIGN                    &kp HASH                    &kp DOLLAR                       &kp PRCNT                                            &kp CARET       &kp AMPERSAND               &kp ASTERISK          &kp GRAVE                 &kp COLON                 &kp MINUS
+&kp EQUAL  &hrm_simple LEFT_ALT N1  &hrm_simple LEFT_GUI NUMBER_2  &hrm_simple LCTRL NUMBER_3  &hrm_simple LEFT_SHIFT NUMBER_4  &kp NUMBER_5                                         &kp N6          &hrm_simple RIGHT_SHIFT N7  &hrm_simple RCTRL N8  &hrm_simple RIGHT_GUI N9  &hrm_simple RIGHT_ALT N0  &kp DOUBLE_QUOTES
+&kp PIPE   &kp BACKSLASH            &kp LESS_THAN                  &kp GREATER_THAN            &kp LPAR                         &kp RPAR      &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE             &kp COMMA             &kp DOT                   &kp FSLH                  &kp PLUS
+                                                                                               &trans                           &mo 4         &trans              &kp BACKSPACE      &trans          &trans
             >;
 
             display-name = "Symbols";
@@ -151,10 +161,10 @@
 
         fkeys {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1           &bt BT_SEL 2           &none               &none                    &none                              &none    &none                      &none                &none                    &none                     &none
-&none         &hrm_left LEFT_ALT F1  &hrm_left LEFT_GUI F2  &hrm_left LCTRL F3  &hrm_left LEFT_SHIFT F4  &kp F5                             &kp F6   &hrm_right RIGHT_SHIFT F7  &hrm_right RCTRL F8  &hrm_right RIGHT_GUI F9  &hrm_right RIGHT_ALT F10  &none
-&none         &none                  &none                  &none               &none                    &kp F11  &bt BT_CLR    &bt BT_CLR  &kp F12  &none                      &none                &none                    &none                     &none
-                                                                                &none                    &trans   &none         &none       &trans   &trans
+&bt BT_SEL 0  &bt BT_SEL 1             &bt BT_SEL 2             &none                 &none                      &none                              &none    &none                       &none                 &none                     &none                      &none
+&none         &hrm_simple LEFT_ALT F1  &hrm_simple LEFT_GUI F2  &hrm_simple LCTRL F3  &hrm_simple LEFT_SHIFT F4  &kp F5                             &kp F6   &hrm_simple RIGHT_SHIFT F7  &hrm_simple RCTRL F8  &hrm_simple RIGHT_GUI F9  &hrm_simple RIGHT_ALT F10  &none
+&none         &none                    &none                    &none                 &none                      &kp F11  &bt BT_CLR    &bt BT_CLR  &kp F12  &none                       &none                 &none                     &none                      &none
+                                                                                      &none                      &trans   &none         &none       &trans   &trans
             >;
 
             display-name = "FKeys";
