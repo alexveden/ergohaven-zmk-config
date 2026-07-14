@@ -152,10 +152,10 @@
         nav {
             display-name = "Nav";
             bindings = <
-&kp LG(ENTER)  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &kp LG(N5)                                       &kp PAGE_UP    &kp HOME    &kp UP_ARROW  &kp END          &kp COLON  &kp LG(F)
-&kp ESC        &kp LEFT_ALT      &kp LEFT_GUI      &kp LCTRL         &kp LEFT_SHIFT    &kp LG(N0)                                       &kp PAGE_DOWN  &kp LEFT    &kp DOWN      &kp RIGHT_ARROW  &none      &kp LG(W)
-&kp LSHFT      &kp LC(Z)         &kp K_CUT         &kp K_COPY        &kp K_PASTE       &kp K_PASTE  &kp LG(LC(Q))    &none              &kp DELETE     &kp DELETE  &none         &none            &none      &kp ENTER
-                                                                     &none             &trans       &none            &kp LC(BACKSPACE)  &mo 4          &trans
+&kp LG(ENTER)  &kp LG(NUMBER_1)           &kp LG(NUMBER_2)           &kp LG(NUMBER_3)        &kp LG(NUMBER_4)             &kp LG(N5)                                       &kp PAGE_UP    &kp HOME    &kp UP_ARROW  &kp END          &kp COLON  &kp LG(F)
+&kp ESC        &mt LEFT_ALT LC(NUMBER_1)  &mt LEFT_GUI LC(NUMBER_2)  &mt LCTRL LC(NUMBER_3)  &mt LEFT_SHIFT LC(NUMBER_4)  &kp LG(N0)                                       &kp PAGE_DOWN  &kp LEFT    &kp DOWN      &kp RIGHT_ARROW  &none      &kp LG(W)
+&kp LSHFT      &kp LC(Z)                  &kp K_CUT                  &kp K_COPY              &kp K_PASTE                  &kp K_PASTE  &kp LG(LC(Q))    &none              &kp DELETE     &kp DELETE  &none         &none            &none      &kp ENTER
+                                                                                             &none                        &trans       &none            &kp LC(BACKSPACE)  &mo 4          &trans
             >;
         };
 
